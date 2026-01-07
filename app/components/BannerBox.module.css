@@ -1,0 +1,69 @@
+.bannerBox {
+  position: relative;
+  width: 600px;
+  height: 400px;
+  z-index: 999;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-left: 20px;
+}
+
+.videoContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.bannerVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.videoOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+  pointer-events: none;
+  border-radius: 16px;
+}
+
+@media (max-width: 1400px) {
+  .bannerBox {
+    width: 500px;
+    height: 350px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .bannerBox {
+    left: calc(50% - 250px);
+    top: calc(50% + 250px);
+    width: 100%;
+    max-width: 500px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .bannerBox {
+    left: 20px;
+    right: 20px;
+    width: auto;
+    max-width: none;
+    height: 250px;
+  }
+}
+
