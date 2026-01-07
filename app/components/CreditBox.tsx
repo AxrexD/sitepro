@@ -13,9 +13,10 @@ export default function CreditBox() {
     // Get GPU info
     const getGPUInfo = () => {
       const canvas = document.createElement('canvas')
-      const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl') as WebGLRenderingContext | null
+      const glContext = canvas.getContext('webgl') || canvas.getContext('experimental-webgl')
+      const gl = glContext as WebGLRenderingContext | null
       
-      if (gl) {
+      if (gl && 'getExtension' in gl) {
         const debugInfo = gl.getExtension('WEBGL_debug_renderer_info')
         if (debugInfo) {
           const renderer = gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL)
